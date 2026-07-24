@@ -172,6 +172,13 @@ main {
     background: #fafbfc;
 }
 
+.repository-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+}
+
 .progress-item p {
     margin-bottom: 0;
 }
