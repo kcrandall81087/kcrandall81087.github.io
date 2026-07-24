@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Software Design and Engineering | Kevin Crandall</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Kevin Crandall</h1>
+
+        <p class="subtitle">
+            Software Developer • Enterprise Applications • AI Solutions
+        </p>
+
+        <nav aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="code-review.html">Code Review</a>
+            <a href="software-engineering.html" class="active">
+                Software Engineering
+            </a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="card">
+            <div class="page-heading">
+                <div>
+                    <p class="eyebrow">CS 499 Capstone Enhancement</p>
+
+                    <h2>Software Design and Engineering</h2>
+                </div>
+
+                <span class="status completed">Completed</span>
+            </div>
+
+            <p>
+                This enhancement revisits the Travlr Getaways full-stack travel
+                management application originally developed in CS 465: Full Stack
+                Development I. The application includes a customer-facing Express
+                and Handlebars website, an Angular administrative single-page
+                application, a RESTful Express API, and a MongoDB database.
+            </p>
+
+            <p>
+                Rather than rebuilding the project or adding unrelated features,
+                this enhancement focused on improving maintainability, security,
+                usability, configuration management, and architectural consistency.
+                The goal was to transform a functional course artifact into a more
+                polished and professionally engineered software solution.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Enhancement Objectives</h2>
+
+            <div class="objective-grid">
+
+                <article class="objective-item">
+                    <h3>Improve Maintainability</h3>
+
+                    <p>
+                        Reduce duplicated backend logic and create reusable
+                        components that are easier to understand, extend, and test.
+                    </p>
+                </article>
+
+                <article class="objective-item">
+                    <h3>Strengthen Security</h3>
+
+                    <p>
+                        Improve authentication, token validation, route protection,
+                        account validation, and sensitive configuration management.
+                    </p>
+                </article>
+
+                <article class="objective-item">
+                    <h3>Improve User Experience</h3>
+
+                    <p>
+                        Add responsive layouts, clearer validation, loading states,
+                        and user-facing success and error messaging.
+                    </p>
+                </article>
+
+                <article class="objective-item">
+                    <h3>Consolidate Architecture</h3>
+
+                    <p>
+                        Remove duplicate implementations and ensure both interfaces
+                        consume a shared REST API and consistent data source.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Major Improvements</h2>
+
+            <div class="improvement-grid">
+
+                <article class="improvement-item">
+                    <h3>Backend Maintainability</h3>
+
+                    <ul>
+                        <li>Centralized API error handling</li>
+                        <li>Reusable validation middleware</li>
+                        <li>Asynchronous controller wrappers</li>
+                        <li>Custom application error class</li>
+                        <li>More consistent API responses</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Authentication and Security</h3>
+
+                    <ul>
+                        <li>Separate registration and login workflows</li>
+                        <li>Duplicate account detection</li>
+                        <li>Guest route protection</li>
+                        <li>Improved JWT validation</li>
+                        <li>Refined Bearer token processing</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Configuration Management</h3>
+
+                    <ul>
+                        <li>MongoDB connection string moved to environment variables</li>
+                        <li>JWT secret removed from source code</li>
+                        <li>Improved deployment flexibility</li>
+                        <li>Reduced exposure of sensitive values</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Angular User Experience</h3>
+
+                    <ul>
+                        <li>Responsive layouts and navigation</li>
+                        <li>Client-side form validation</li>
+                        <li>Loading indicators</li>
+                        <li>Success and error messaging</li>
+                        <li>Disabled submit buttons during processing</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Application Architecture</h3>
+
+                    <ul>
+                        <li>Shared REST API for both user interfaces</li>
+                        <li>Removal of obsolete static travel implementation</li>
+                        <li>Single source of truth for trip information</li>
+                        <li>Reduced duplicate functionality</li>
+                        <li>Improved consistency across the application</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Testing and Quality</h3>
+
+                    <ul>
+                        <li>Authentication workflow testing</li>
+                        <li>Protected route verification</li>
+                        <li>CRUD operation testing</li>
+                        <li>Responsive layout testing</li>
+                        <li>Regression testing across both interfaces</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Technical Skills Demonstrated</h2>
+
+            <div class="tag-list">
+                <span class="tag">Angular</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">JWT Authentication</span>
+                <span class="tag">Middleware</span>
+                <span class="tag">Error Handling</span>
+                <span class="tag">Environment Configuration</span>
+                <span class="tag">Responsive Design</span>
+                <span class="tag">Validation</span>
+                <span class="tag">Regression Testing</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Course Outcomes Demonstrated</h2>
+
+            <div class="outcome-list">
+
+                <article class="outcome-item">
+                    <h3>Software Engineering</h3>
+
+                    <p>
+                        Applied layered architecture, reusable middleware,
+                        centralized error handling, modular components, environment-
+                        based configuration, and RESTful API practices to improve
+                        maintainability and long-term software quality.
+                    </p>
+                </article>
+
+                <article class="outcome-item">
+                    <h3>Security Mindset</h3>
+
+                    <p>
+                        Strengthened authentication, protected routes, improved JWT
+                        handling, validated duplicate accounts, and removed sensitive
+                        configuration values from the source code.
+                    </p>
+                </article>
+
+                <article class="outcome-item">
+                    <h3>Professional Communication</h3>
+
+                    <p>
+                        Documented the enhancement through a comprehensive README,
+                        clear repository organization, and a structured Git history
+                        that communicates the implementation process.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Reflection</h2>
+
+            <p>
+                This enhancement reinforced that professional software engineering
+                extends well beyond writing functional code. Many of the most
+                valuable improvements came from refactoring existing functionality,
+                reducing duplication, improving security, and creating reusable
+                structures that make the application easier to maintain.
+            </p>
+
+            <p>
+                The process also highlighted the importance of managing scope.
+                Features such as role-based authorization and additional
+                administrative capabilities were considered, but the work remained
+                focused on the objectives defined for the enhancement. Continuous
+                testing helped ensure that the architectural changes did not
+                introduce regressions elsewhere in the application.
+            </p>
+
+            <p>
+                Overall, the enhancement transformed the original artifact into a
+                more secure, maintainable, consistent, and professional application
+                without changing its core purpose. It demonstrates how thoughtful
+                engineering practices can substantially improve an existing software
+                solution.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Project Repositories</h2>
+
+            <p>
+                The original repository contains the application as developed during
+                CS 465. The enhancement branch contains the completed software design
+                and engineering improvements created during the CS 499 capstone.
+            </p>
+
+            <div class="repository-links">
+
+                <a
+                    class="button"
+                    href="https://github.com/kcrandall81087/travlr-getaways-enhanced/tree/enhancement/software-engineering"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Enhancement Branch
+                </a>
+
+                <a
+                    class="button outline-button"
+                    href="https://github.com/kcrandall81087/CS465"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Original Repository
+                </a>
+
+            </div>
+        </section>
+
+        <nav class="page-navigation" aria-label="Portfolio page navigation">
+
+            <a href="code-review.html">
+                &larr; Previous: Code Review
+            </a>
+
+            <a href="index.html">
+                Return Home
+            </a>
+
+            <a href="algorithms.html">
+                Next: Algorithms &amp; Data Structures &rarr;
+            </a>
+
+        </nav>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Kevin Crandall
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Algorithms and Data Structures | Kevin Crandall</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Kevin Crandall</h1>
+
+        <p class="subtitle">
+            Software Developer • Enterprise Applications • AI Solutions
+        </p>
+
+        <nav aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="code-review.html">Code Review</a>
+            <a href="software-engineering.html">Software Engineering</a>
+            <a href="algorithms.html" class="active">Algorithms</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="card">
+            <div class="page-heading">
+                <div>
+                    <p class="eyebrow">CS 499 Capstone Enhancement</p>
+
+                    <h2>Algorithms and Data Structures</h2>
+                </div>
+
+                <span class="status completed">Completed</span>
+            </div>
+
+            <p>
+                This enhancement revisits the Travlr Getaways full-stack travel
+                management application originally developed in CS 465: Full Stack
+                Development I. The application includes a customer-facing Express
+                and Handlebars website, an Angular administrative single-page
+                application, a RESTful Express API, and a MongoDB database.
+            </p>
+
+            <p>
+                The original application retrieved complete collections of trip
+                records before allowing the client applications to search, sort,
+                or organize the information. While this approach worked with a
+                limited dataset, it created unnecessary data transfers and required
+                each interface to perform additional processing.
+            </p>
+
+            <p>
+                This enhancement redesigned the data-retrieval process by moving
+                searching, filtering, sorting, and pagination to the server. The
+                REST API now processes query parameters and returns only the subset
+                of trip records requested by the user, improving scalability,
+                consistency, and overall application performance.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Enhancement Objectives</h2>
+
+            <div class="objective-grid">
+
+                <article class="objective-item">
+                    <h3>Improve Data Retrieval</h3>
+
+                    <p>
+                        Replace full-collection retrieval with server-side query
+                        processing that returns only records matching the user's
+                        requested criteria.
+                    </p>
+                </article>
+
+                <article class="objective-item">
+                    <h3>Reduce Data Transfer</h3>
+
+                    <p>
+                        Limit unnecessary network traffic by introducing pagination
+                        and restricting the number of trip records returned during
+                        each API request.
+                    </p>
+                </article>
+
+                <article class="objective-item">
+                    <h3>Support Flexible Queries</h3>
+
+                    <p>
+                        Allow users to search, filter, and sort travel packages using
+                        REST API query parameters and multiple trip attributes.
+                    </p>
+                </article>
+
+                <article class="objective-item">
+                    <h3>Maintain Interface Consistency</h3>
+
+                    <p>
+                        Centralize query logic within the REST API so the Angular
+                        administrative application and customer-facing website
+                        provide consistent results.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Major Improvements</h2>
+
+            <div class="improvement-grid">
+
+                <article class="improvement-item">
+                    <h3>Server-Side Search</h3>
+
+                    <ul>
+                        <li>Added REST API query parameter support</li>
+                        <li>Searches across multiple trip attributes</li>
+                        <li>Processes search requests on the server</li>
+                        <li>Returns only matching trip records</li>
+                        <li>Reduces duplicated client-side logic</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Price and Duration Filtering</h3>
+
+                    <ul>
+                        <li>Added minimum-price filtering</li>
+                        <li>Added maximum-price filtering</li>
+                        <li>Added trip-duration filtering</li>
+                        <li>Supports combined filtering criteria</li>
+                        <li>Builds MongoDB queries dynamically</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Flexible Sorting</h3>
+
+                    <ul>
+                        <li>Sorting by trip name</li>
+                        <li>Sorting by resort</li>
+                        <li>Sorting by price</li>
+                        <li>Sorting by duration</li>
+                        <li>Support for ascending and descending order</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Pagination</h3>
+
+                    <ul>
+                        <li>Introduced page-based data retrieval</li>
+                        <li>Added configurable page-size handling</li>
+                        <li>Reduced records returned per request</li>
+                        <li>Improved scalability for larger datasets</li>
+                        <li>Reduced unnecessary client processing</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Legacy Data Handling</h3>
+
+                    <ul>
+                        <li>Identified text-based price values</li>
+                        <li>Identified text-based duration values</li>
+                        <li>Added MongoDB aggregation conversions</li>
+                        <li>Enabled accurate numeric sorting</li>
+                        <li>Preserved compatibility with the existing schema</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Validation and Reliability</h3>
+
+                    <ul>
+                        <li>Validated incoming query parameters</li>
+                        <li>Restricted supported sort fields</li>
+                        <li>Handled invalid pagination values</li>
+                        <li>Preserved authenticated API interactions</li>
+                        <li>Maintained consistent API behavior</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Angular Administrative Interface</h3>
+
+                    <ul>
+                        <li>Added trip search controls</li>
+                        <li>Added filtering options</li>
+                        <li>Added selectable sorting</li>
+                        <li>Added pagination controls</li>
+                        <li>Connected controls to server-side query processing</li>
+                    </ul>
+                </article>
+
+                <article class="improvement-item">
+                    <h3>Customer-Facing Website</h3>
+
+                    <ul>
+                        <li>Integrated the enhanced REST API</li>
+                        <li>Added consistent search behavior</li>
+                        <li>Added filtering and sorting support</li>
+                        <li>Added paginated trip results</li>
+                        <li>Shared centralized business logic with the SPA</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Algorithmic Process</h2>
+
+            <div class="outcome-list">
+
+                <article class="outcome-item">
+                    <h3>1. Receive and Validate the Request</h3>
+
+                    <p>
+                        The REST API receives search, filtering, sorting, and
+                        pagination values through query parameters. The application
+                        validates these values before using them to construct the
+                        database request.
+                    </p>
+                </article>
+
+                <article class="outcome-item">
+                    <h3>2. Build the Query</h3>
+
+                    <p>
+                        A query object is created dynamically based on the supplied
+                        criteria. Only filters included in the request are added,
+                        allowing users to combine search terms, price ranges, and
+                        duration requirements.
+                    </p>
+                </article>
+
+                <article class="outcome-item">
+                    <h3>3. Process Numeric Values</h3>
+
+                    <p>
+                        When price or duration sorting is requested, MongoDB
+                        aggregation operations convert legacy text values into
+                        numeric values so the records can be ordered accurately.
+                    </p>
+                </article>
+
+                <article class="outcome-item">
+                    <h3>4. Sort and Paginate the Results</h3>
+
+                    <p>
+                        Matching records are sorted using the selected field and
+                        direction. Pagination calculations determine which records
+                        should be skipped and how many should be returned.
+                    </p>
+                </article>
+
+                <article class="outcome-item">
+                    <h3>5. Return the Requested Subset</h3>
+
+                    <p>
+                        The API returns only the matching page of records rather
+                        than the entire trip collection. Both application interfaces
+                        then display the same consistently processed results.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Technical Skills Demonstrated</h2>
+
+            <div class="tag-list">
+                <span class="tag">Algorithm Design</span>
+                <span class="tag">Data Processing</span>
+                <span class="tag">Server-Side Search</span>
+                <span class="tag">Dynamic Filtering</span>
+                <span class="tag">Sorting</span>
+                <span class="tag">Pagination</span>
+                <span class="tag">REST API Queries</span>
+                <span class="tag">MongoDB Aggregation</span>
+                <span class="tag">Query Validation</span>
+                <span class="tag">Performance Optimization</span>
+                <span class="tag">Angular</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">Scalable Architecture</span>
+                <span class="tag">Technical Documentation</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Course Outcomes Demonstrated</h2>
+
+            <div class="outcome-list">
+
+                <article class="outcome-item">
+                    <h3>Algorithmic Design and Evaluation</h3>
+
+                    <p>
+                        Designed and evaluated a server-side data-retrieval solution
+                        that applies searching, filtering, sorting, aggregation, and
+                        pagination while considering efficiency, scalability, and
+                        design trade-offs.
+                    </p>
+                </article>
+
+                <article class="outcome-item">
+                    <h3>Innovative Computing Practices</h3>
+
+                    <p>
+                        Used REST API query processing and MongoDB aggregation
+                        techniques to improve application performance and deliver
+                        useful functionality across multiple user interfaces.
+                    </p>
+                </article>
+
+                <article class="outcome-item">
+                    <h3>Software Engineering</h3>
+
+                    <p>
+                        Centralized business logic within the REST API, reduced
+                        duplication across the Angular and Express interfaces, and
+                        maintained compatibility with the existing application
+                        architecture.
+                    </p>
+                </article>
+
+                <article class="outcome-item">
+                    <h3>Professional Communication</h3>
+
+                    <p>
+                        Documented the enhanced query functionality, implementation
+                        decisions, technical trade-offs, and application behavior
+                        through the repository README and capstone narrative.
+                    </p>
+                </article>
+
+                <article class="outcome-item">
+                    <h3>Security Mindset</h3>
+
+                    <p>
+                        Validated query parameters, restricted accepted sorting and
+                        pagination values, and preserved secure interactions with
+                        the application's existing authenticated API.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Design Trade-Offs</h2>
+
+            <p>
+                A significant challenge involved the representation of price and
+                duration values in the original database. These values were stored
+                as text, which prevented standard numeric sorting from producing
+                accurate results. Permanently changing the data types would have
+                required a database migration and broader schema redesign.
+            </p>
+
+            <p>
+                Because the database redesign belongs to the next enhancement, I
+                implemented MongoDB aggregation-based conversions as an interim
+                solution. This allowed the application to perform accurate numeric
+                sorting while preserving compatibility with the existing records
+                and interfaces.
+            </p>
+
+            <p>
+                This decision balanced immediate performance and functionality
+                requirements against the long-term goal of improving the underlying
+                database schema. It also prevented unnecessary scope expansion
+                during the Algorithms and Data Structures enhancement.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Reflection</h2>
+
+            <p>
+                This enhancement reinforced that algorithmic thinking in modern
+                software engineering extends beyond implementing traditional
+                textbook algorithms. In a full-stack application, it also involves
+                designing efficient methods for retrieving, filtering, organizing,
+                and transferring data.
+            </p>
+
+            <p>
+                Moving search, filtering, sorting, and pagination from the clients
+                to the server improved scalability and reduced duplicated logic.
+                It also created a more consistent experience because both the
+                Angular administrative application and the customer-facing website
+                now rely on the same centralized query-processing logic.
+            </p>
+
+            <p>
+                The enhancement also demonstrated how strongly data representation
+                affects algorithmic efficiency. Discovering that prices and
+                durations were stored as text required evaluating several possible
+                solutions and selecting one that addressed the immediate need
+                without disrupting the existing architecture.
+            </p>
+
+            <p>
+                Overall, this work strengthened my understanding of scalable data
+                processing, API design, algorithmic trade-offs, and the importance
+                of aligning technical decisions with the current phase of the
+                software development lifecycle.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Project Repositories</h2>
+
+            <p>
+                The original repository contains the Travlr Getaways application
+                as developed during CS 465. The Algorithms and Data Structures
+                branch contains the completed server-side searching, filtering,
+                sorting, pagination, validation, interface, and data-processing
+                enhancements.
+            </p>
+
+            <div class="repository-links">
+
+                <a
+                    class="button"
+                    href="https://github.com/kcrandall81087/travlr-getaways-enhanced/tree/enhancement/algorithms"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Enhancement Branch
+                </a>
+
+                <a
+                    class="button outline-button"
+                    href="https://github.com/kcrandall81087/CS465"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Original Repository
+                </a>
+
+            </div>
+        </section>
+
+        <nav class="page-navigation" aria-label="Portfolio page navigation">
+
+            <a href="software-engineering.html">
+                &larr; Previous: Software Engineering
+            </a>
+
+            <a href="index.html">
+                Return Home
+            </a>
+
+            <span class="disabled-link">
+                Next: Database Enhancement &rarr;
+            </span>
+
+        </nav>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Kevin Crandall
+    </footer>
+
+</body>
+
+</html>
